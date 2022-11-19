@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"log"
+	"os"
 
 	"github.com/spf13/viper"
 )
@@ -11,7 +11,7 @@ func GetConfig(key string) string {
 	viper.SetConfigFile(".env")
 
 	if err := viper.ReadInConfig(); err != nil {
-		log.Fatal(err)
+		return os.Getenv(key)
 	}
 
 	return viper.GetString(key)
