@@ -2,6 +2,7 @@ package main
 
 import (
 	"first-app/utils"
+	"os"
 
 	"github.com/labstack/echo/v4"
 )
@@ -11,7 +12,13 @@ func main() {
 
 	e.GET("/hello", sayHallo)
 
-	e.Logger.Fatal(e.Start(":2121"))
+	port := os.Getenv("PORT")
+
+	if port == "" {
+		port = "2121"
+	}
+
+	e.Logger.Fatal(e.Start(":" + port))
 }
 
 func sayHallo(c echo.Context) error {
