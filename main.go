@@ -23,7 +23,7 @@ func main() {
 
 func sayHallo(c echo.Context) error {
 	return c.JSON(200, map[string]any{
-		"message":  "hallo dunia tipu2",
+		"message":  "hallo dunia tipu2 aaaaaaa",
 		"app name": utils.GetConfig("APP_NAME"),
 		"db name":  utils.GetConfig("DB_NAME"),
 	})
