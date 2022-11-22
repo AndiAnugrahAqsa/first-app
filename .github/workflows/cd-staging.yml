@@ -1,0 +1,45 @@
+name: ini cd golang
+on:
+  push:
+    branches:
+      - "master"
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    name: "ini unitest"
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+      - name: run unit test
+        run: go test -v ./...
+
+  deploy:
+    runs-on: ubuntu-latest
+    name: "ini deploy"
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-go@v3
+        with:
+          go-version: 1.19
+
+      # Setup Heroku
+      - name: Setup Heroku CLI
+        run: sudo snap install --classic heroku
+      # Setup Heroku Git
+      - name: Setup Heroku GIT
+        run: |
+          rm -rf .git
+          git init
+          git config --global user.name "AndiAnugrahAqsa"
+          git config --global user.email andianugrahaqsa@gmail.com
+          heroku git:remote -a test-deployy111
+          git add .
+          git commit -m "ROCK YOU"
+      
+       # Push New Changes
+      - name: Push new changes to heroku
+        run: |
+          git push -f heroku master
