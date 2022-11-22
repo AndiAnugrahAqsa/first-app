@@ -35,9 +35,10 @@ jobs:
           git init
           git config --global user.name "AndiAnugrahAqsa"
           git config --global user.email andianugrahaqsa@gmail.com
-          heroku git:remote -a test-deployy111
           git add .
           git commit -m "ROCK YOU"
+          heroku git:remote -a test-deployy111
+          git remote -v
       
        # Push New Changes
       - name: Push new changes to heroku
