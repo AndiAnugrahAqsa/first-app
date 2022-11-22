@@ -32,6 +32,9 @@ jobs:
 
       # Setup Heroku Git
       - name: Setup Heroku GIT
+        env:
+          TOKEN: ${{ secrets.HEROKU_TOKEN }}
+          APP: ${{ secrets.HEROKU_APP }}
         run: |
           rm -rf .git
           git init
@@ -39,7 +42,7 @@ jobs:
           git config --global user.email andianugrahaqsa@gmail.com
           git add .
           git commit -m "ROCK YOU"
-          git remote add heroku https://heroku:6fd5dd3f-14a1-438b-9e3b-82805046df79@git.heroku.com/test-deployy111.git
+          git remote add heroku https://heroku:$TOKEN@git.heroku.com/$APP.git
           git remote -v
       
        # Push New Changes
