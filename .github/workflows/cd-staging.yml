@@ -34,6 +34,7 @@ jobs:
           heroku login -i
           echo andinugraha1399@gmail.com
           echo ${{ secrets.HEROKU_PASSWORD }}
+          heroku access
           
           
 
