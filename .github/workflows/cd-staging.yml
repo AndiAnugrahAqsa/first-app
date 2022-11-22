@@ -32,9 +32,8 @@ jobs:
       - name: Login Heroku
         run: |
           heroku login -i
-        with:
-          username: andinugraha1399@gmail.com
-          password: ${{ secrets.HEROKU_PASSWORD }}
+          echo andinugraha1399@gmail.com
+          echo ${{ secrets.HEROKU_PASSWORD }}
           
           
 
