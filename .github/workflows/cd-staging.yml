@@ -32,8 +32,11 @@ jobs:
       - name: Login Heroku
         run: |
           heroku login -i
-          andinugraha1399@gmail.com
-          ${{ secrets.HEROKU_PASSWORD }}
+        with:
+          username: andinugraha1399@gmail.com
+          password: ${{ secrets.HEROKU_PASSWORD }}
+          
+          
 
       # Setup Heroku Git
       - name: Setup Heroku GIT
