@@ -29,12 +29,12 @@ jobs:
       - name: Setup Heroku CLI
         run: sudo curl https://cli-assets.heroku.com/install.sh | sh
 
-      - name: Login Heroku
-        run: |
-          heroku login -i
-          echo andinugraha1399@gmail.com
-          echo ${{ secrets.HEROKU_PASSWORD }}
-          heroku access
+      # - name: Login Heroku
+      #   run: |
+      #     heroku login -i
+      #     echo andinugraha1399@gmail.com
+      #     echo ${{ secrets.HEROKU_PASSWORD }}
+      #     heroku access
           
           
 
@@ -47,7 +47,7 @@ jobs:
           git config --global user.email andianugrahaqsa@gmail.com
           git add .
           git commit -m "ROCK YOU"
-          heroku git:remote -a test-deployy111
+          git remote add heroku https://heroku:6fd5dd3f-14a1-438b-9e3b-82805046df79@git.heroku.com/test-deployy111.git
           git remote -v
       
        # Push New Changes
