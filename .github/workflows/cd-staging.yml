@@ -39,13 +39,14 @@ jobs:
         run: |
           rm -rf .git
           git init
+          git config --global user.name "AndiAnugrahAqsa"
+          git config --global user.email andianugrahaqsa@gmail.com
           git add .
           git commit -m "ROCK YOU"
           git remote add heroku https://heroku:$TOKEN@git.heroku.com/$APP.git
           git remote -v
       
        # Push New Changes
-      # - name: Push new changes to heroku
       - name: Push new changes to heroku
         run: |
           git push -f heroku master
