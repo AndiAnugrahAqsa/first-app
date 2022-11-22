@@ -27,7 +27,7 @@ jobs:
 
       # Setup Heroku
       - name: Setup Heroku CLI
-        run: sudo snap install --classic heroku
+        run: sudo curl https://cli-assets.heroku.com/install.sh | sh
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: |
