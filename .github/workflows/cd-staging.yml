@@ -27,15 +27,7 @@ jobs:
 
       # Setup Heroku
       - name: Setup Heroku CLI
-        run: sudo curl https://cli-assets.heroku.com/install.sh | sh
-
-      # - name: Login Heroku
-      #   run: |
-      #     heroku login -i
-      #     echo andinugraha1399@gmail.com
-      #     echo ${{ secrets.HEROKU_PASSWORD }}
-      #     heroku access
-          
+        run: sudo curl https://cli-assets.heroku.com/install.sh | sh         
           
 
       # Setup Heroku Git
