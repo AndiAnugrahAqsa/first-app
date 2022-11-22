@@ -45,6 +45,7 @@ jobs:
           git remote -v
       
        # Push New Changes
+      # - name: Push new changes to heroku
       - name: Push new changes to heroku
         run: |
           git push -f heroku master
